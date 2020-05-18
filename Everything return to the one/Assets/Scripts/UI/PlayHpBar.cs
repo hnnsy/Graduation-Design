@@ -1,21 +1,21 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayHpBar : MonoBehaviour
+namespace UI
 {
-    private GameObject target;
-
-    private void Awake()
+    public class PlayHpBar : MonoBehaviour
     {
-        target = GameObject.FindGameObjectWithTag("Player");
-    }
+        private GameObject target;
 
-    void Update()
-    {
-        GetComponent<Slider>().value =
-            target.GetComponent<PlayerControl>().hp / target.GetComponent<PlayerControl>().maxHP;
+        private void Awake()
+        {
+            target = GameObject.FindGameObjectWithTag("Player");
+        }
+
+        void Update()
+        {
+            GetComponent<Slider>().value =
+                target.GetComponent<PlayerControl>().hp / target.GetComponent<PlayerControl>().maxHP;
+        }
     }
 }

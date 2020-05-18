@@ -1,39 +1,40 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class RightKeySet : MonoBehaviour
+namespace UI.keyset
 {
-    public GameObject keyboard;
-    public GameObject showkey;
-    public GameObject setkey;
-    void Update()
+    public class RightKeySet : MonoBehaviour
     {
-        if (setkey.activeInHierarchy && Input.anyKeyDown)
+        public GameObject keyboard;
+        public GameObject showkey;
+        public GameObject setkey;
+        void Update()
         {
-            foreach (KeyCode keyCode in Enum.GetValues(typeof(KeyCode)))
+            if (setkey.activeInHierarchy && Input.anyKeyDown)
             {
-                if (Input.GetKeyDown(keyCode))
+                foreach (KeyCode keyCode in Enum.GetValues(typeof(KeyCode)))
                 {
-                    GlobalVar.rightArrowKey = keyCode;
-                    Debug.Log(keyCode.ToString());
-                    keysetoff();
-                    keyboard.GetComponent<ChangeKey>().refushKey();
+                    if (Input.GetKeyDown(keyCode))
+                    {
+                        GlobalVar.rightArrowKey = keyCode;
+                        Debug.Log(keyCode.ToString());
+                        keysetoff();
+                        keyboard.GetComponent<ChangeKey>().refushKey();
+                    }
                 }
             }
         }
-    }
 
-    public void keysetActive()
-    {
-        setkey.SetActive(true);
-        showkey.SetActive(false);
-    }
+        public void keysetActive()
+        {
+            setkey.SetActive(true);
+            showkey.SetActive(false);
+        }
     
-    public void keysetoff()
-    {
-        showkey.SetActive(true);
-        setkey.SetActive(false);
+        public void keysetoff()
+        {
+            showkey.SetActive(true);
+            setkey.SetActive(false);
+        }
     }
 }
