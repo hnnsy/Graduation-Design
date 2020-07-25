@@ -50,5 +50,5 @@ public class GlobalVar
     public static List<string> menuZone = new List<string>(){"Level0"};
     public static List<string> blackZone = new List<string>(){"Level1","Level2_1","Level2_2","Level2_3","Level2_5","Level2_6"};
     public static List<string> blackZoneBoss = new List<string>(){"Level2_4"};
-    public static List<string> redZone = new List<string>(){"Level3_2"};
+    public static List<string> redZone = new List<string>(){"Level3_1","Level3_2"};
 }

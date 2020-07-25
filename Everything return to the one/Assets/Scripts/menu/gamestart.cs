@@ -61,7 +61,7 @@ public class gamestart : MonoBehaviour
         {
             if (!GlobalVar.redZone.Contains(scenceName))
             {
-                
+                AudioManager.Instance.ChangeBackgroundSound("level31");
             }
         }
     }

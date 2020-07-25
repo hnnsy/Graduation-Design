@@ -98,7 +98,7 @@ public class ExitControl : MonoBehaviour
         {
             if (!GlobalVar.redZone.Contains(SceneManager.GetActiveScene().name))
             {
-                
+                AudioManager.Instance.ChangeBackgroundSound("level31");
             }
         }
     }
